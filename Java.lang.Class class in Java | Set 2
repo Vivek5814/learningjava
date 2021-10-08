@@ -1,0 +1,24 @@
+// Java program to demonstrate getModifiers() method
+ 
+import java.lang.reflect.Modifier;
+ 
+public abstract class Test
+{
+    public static void main(String[] args)
+    {
+        // returns the Class object associated with Test class
+        Class c = Test.class;
+ 
+        // returns the Modifiers of the class Test
+        // getModifiers method
+        int i = c.getModifiers();
+         
+        System.out.println(i);
+         
+        System.out.print("Modifiers of " + c.getName() + " class are : ");
+ 
+        // getting decoded i using toString() method
+        // of Modifier class
+        System.out.println(Modifier.toString(i));
+    }
+}
