@@ -1,0 +1,52 @@
+// C++ program to print half diamond
+// number star pattern
+#include <iostream>
+using namespace std;
+
+// Function to print the given pattern
+void printPattern(int r)
+{
+	r = r / 2;
+	int count = r;
+
+	// loop to print upper half pattern
+	for (int i = 0; i < r; i++) {
+		for (int j = r; j > i; j--) {
+			if (j != r) {
+				cout << "*" << count;
+			}
+			else {
+				cout << count;
+			}
+		}
+		count--;
+		cout << endl;
+	}
+	count++;
+
+	// loop to print lower half pattern
+	for (int i = 0; i < r; i++) {
+		for (int j = 0; j <= i; j++) {
+			if (j != 0) {
+				cout << "*" << count;
+			}
+			else {
+				cout << count;
+			}
+		}
+		count++;
+		cout << endl;
+	}
+}
+
+// Driver code
+int main()
+{
+	int n;
+	
+	n = 6;
+	
+	printPattern(n);
+	
+	return 0;
+}
