@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+// C++ program to print above pattern
+void display(int n)
+{
+
+	// 'sp' used for space and 'st' used for star
+	int sp = n / 2, st = 1;
+
+	// Outer for loop prints number of lines
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= sp; j++) {
+			cout << " ";
+		}
+		
+		int count = 1;
+		for (int k = 1; k <= st; k++) {
+			if (k % 2 == 0)
+				cout << "*";
+			else
+				cout << count++;
+		}
+
+		cout << "\n";
+
+		if (i <= n / 2) {
+			
+			// Before reaching to half after
+			// every line space is decreased
+			// by 1 and star is increased by 2
+			sp = sp - 1;
+			st = st + 2;
+		}
+		else {
+			
+			// After reaching to half
+			// space is increased by 1
+			// and star is decreased by 2
+			sp = sp + 1;
+			st = st - 2;
+		}
+	}
+}
+
+// Driver Code
+int main()
+{
+	int n = 5;
+	display(n);
+	return 0;
+}
+
+// This code is contributed by vt_m
