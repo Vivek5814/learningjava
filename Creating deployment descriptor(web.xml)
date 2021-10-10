@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF=8"?>
+<web-app>
+	<servlet>
+		<servlet-name>LifeCycleServlet</servlet-name>
+		<servlet-class>LifeCycleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LifeCycleServlet</servlet-name>
+		<url-pattern>/LifeCycleServlet</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>
+			30
+		</session-config>
+</web-app>
