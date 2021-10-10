@@ -1,0 +1,77 @@
+// Java Program to Illustrate XML EventWriter in StAX API
+
+// Importing required classes
+import java.io.*;
+import javax.xml.stream.XMLEventFactory;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.XMLEvent;
+
+// Main class
+class GFG {
+
+	// Main driver method
+	public static void main(String[] args)
+	{
+
+		// Getting the XMLOutputFactory instance
+		XMLOutputFactory factory
+			= XMLOutputFactory.newInstance();
+
+		// Getting the XMLEventFactory instance
+		XMLEventFactory eventFactory
+			= XMLEventFactory.newInstance();
+
+		// Try block to check for exceptions
+		try {
+
+			// Creating EventWriter object
+			XMLEventWriter writer
+				= factory.createXMLEventWriter(
+					new FileWriter("F:\\gfg-XmlFile.xml"));
+			XMLEvent event
+				= eventFactory.createStartDocument();
+			writer.add(event);
+
+			// Creating a start element
+			event = eventFactory.createStartElement(
+				"GFG", "https://www.geeksforgeeks.org/",
+				"document");
+			writer.add(event);
+
+			// Cteating namespace
+			event = eventFactory.createNamespace(
+				"GeeksforGeeks-practice",
+				"https://practice.geeksforgeeks.org/");
+			writer.add(event);
+
+			// Setting attributes
+			event = eventFactory.createAttribute(
+				"attribute", "GFG");
+			writer.add(event);
+
+			// Lastly creating ana end element
+			event = eventFactory.createEndElement(
+				"GFG", "http://gfg.com", "document");
+			writer.add(event);
+
+			// Flush and close xmlEventWriter
+			// using close() and flush() method
+			// It is always a good practice
+			writer.flush();
+			writer.close();
+		}
+
+		// Catch block to handle exceptions
+		catch (XMLStreamException e) {
+
+			// Print line number where exception occurs
+			// using printStacktrace() method
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
