@@ -1,40 +1,36 @@
-// Java Program to find the Sum of Two Numbers
-// Without Using any Arithmetic Operator
+// Java program to demonstrate
+// subtract() method of BigDecimal
 
-// Importing input output classes
-import java.io.*;
+import java.math.BigDecimal;
 
-// Main class
-class GFG {
-
-	// Method to sum two integer elements
-	static int Sum(int a, int b)
+public class GFG {
+	public static void main(String[] args)
 	{
+		// BigDecimal object to store result
+		BigDecimal diff;
 
-		// Iterating until there is no carry
-		while (b != 0) {
+		// For user input
+		// Use Scanner or BufferedReader
 
-			// Using AND operator
-			int carry = a & b;
+		// Two objects of String created
+		// Holds the values to calculate the difference
+		String input1
+			= "545456468445645468464645";
+		String input2
+			= "425645648446468486486452";
 
-			// Using XOR operator
-			a = a ^ b;
+		// Convert the string input to BigDecimal
+		BigDecimal a
+			= new BigDecimal(input1);
+		BigDecimal b
+			= new BigDecimal(input2);
 
-			// Shifting the carry by one so that
-			// adding it to the integer 'a'
-			// gives the desired output
-			b = carry << 1;
-		}
-		return a;
-	}
+		// Using subtract() method
+		diff = a.subtract(b);
 
-	// Method 2
-	// Main driver method
-	public static void main(String arg[])
-	{
-
-		// Print the sum of custom integer numbers to be
-		// summed up passed as an argunts
-		System.out.println(Sum(2, 3));
+		// Display the result in BigDecimal
+		System.out.println("The difference of\n"
+						+ a + " \nand\n" + b + " "
+						+ "\nis\n" + diff + "\n");
 	}
 }
