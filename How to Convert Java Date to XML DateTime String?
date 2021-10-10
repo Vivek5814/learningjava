@@ -1,0 +1,92 @@
+// Java program to Convert Java Date to XML DateTime String
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class GFG {
+
+	public static void main(String[] args)
+	{
+
+		// formatting time
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat format2 = new SimpleDateFormat("HH:mm:ss");
+		
+		// create a StringBuffer(in order to use its append
+		// functionality) to store the date in XML DateTime
+		// format
+		StringBuffer buff = new StringBuffer();
+		
+		// get the date of the system by creating an
+		// instance of the Date class
+		Date date = new Date();
+		
+		// append the formated date(yyyy-MM-dd) in the
+		// buffer
+		buff.append(format1.format(date));
+		
+		// append T
+		buff.append('T');
+		
+		// and finally append the formated time(HH:mm:ss) in
+		// buffer
+		buff.append(format2.format(date));
+
+		// calculating time zone
+		// get the calendar instance in order to get the
+		// time offset
+		Calendar calendar = Calendar.getInstance();
+		
+		// The get(int field_value) method of Calendar class
+		// is used to return the value of the given calendar
+		// field in the parameter.
+		int offset = calendar.get(calendar.ZONE_OFFSET)
+					/ (1000 * 60);
+		
+		// add the sign(+/-) according to the value of the
+		// offset
+		if (offset < 0) {
+			buff.append('-');
+			
+			// if the offset is negative make it positive by
+			// multiplying it with -1, we will be using it
+			//further
+			offset *= -1;
+		}
+		else {
+			buff.append('+');
+		}
+
+		// get the hour from the offset and store it in a
+		// String
+		String s1 = String.valueOf(offset / 60);
+		
+		// check if the retrieved hour is single digit or
+		// two digit in case of single digit, add 0 before
+		// the significant value
+		for (int i = s1.length(); i < 2; i++) {
+			buff.append('0');
+		}
+		
+		// then finally append the s1 in our buffer
+		buff.append(s1);
+		buff.append(':');
+
+		// now retrieve the minutes from offset, and
+		// validate it in the same way as we did for the hour
+		String s2 = String.valueOf(offset % 60);
+		
+		for (int i = s2.length(); i < 2; i++) {
+			buff.append('0');
+		}
+		
+		// append the minutes in buffer
+		buff.append(s2);
+		
+		// finally we are done formatting the Java Date time
+		// into XML DateTime format convert the buffer into
+		// the String, and print it
+		System.out.println(buff.toString());
+	}
+}
