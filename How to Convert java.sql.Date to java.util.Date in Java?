@@ -1,0 +1,30 @@
+// Java program to Convert java.sql.Date to java.util.Date
+
+import java.sql.*;
+import java.text.*;
+import java.util.*;
+public class GFG {
+
+	public static void main(String[] args)
+	{
+
+		// sql date object takes time in milliseconds
+		long millis = System.currentTimeMillis();
+
+		// creating sql date object
+		java.sql.Date sqlDate = new java.sql.Date(millis);
+
+		// creating util date object by passing gettime()
+		// method of sql date class
+		java.util.Date utilDate = new java.util.Date(sqlDate.getTime());
+
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	
+		// converting the util date into string format
+		final String stringDate = dateFormat.format(utilDate);
+
+		// printing both dates
+		System.out.println("utilDate:" + stringDate);
+		System.out.println("sqlDate:" + sqlDate);
+	}
+}
