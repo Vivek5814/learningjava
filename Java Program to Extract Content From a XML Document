@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<class>
+	<geek>
+		<id>1</id>
+		<username>geek1</username>
+		<EnrolledCourse>D.S.A</EnrolledCourse>
+		<mode>online self paced</mode>
+		<duration>Lifetime</duration>
+	</geek>
+		
+	<geek>
+		<id>2</id>
+		<username>geek2</username>
+		<EnrolledCourse>System Design</EnrolledCourse>
+		<mode>online live course</mode>
+		<duration>10 Lectures</duration>
+	</geek>
+	
+	<geek>
+		<id>3</id>
+		<username>geek3</username>
+		<EnrolledCourse>Compitative Programming</EnrolledCourse>
+		<mode>online live course</mode>
+		<duration>8 weeks</duration>
+	</geek>
+	
+	<geek>
+		<id>4</id>
+		<username>geek4</username>
+		<EnrolledCourse>Complete Interview Preparation</EnrolledCourse>
+		<mode>online self paced</mode>
+		<duration>Lifetime</duration>
+	</geek>
+	
+</class>
