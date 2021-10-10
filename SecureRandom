@@ -1,0 +1,36 @@
+// Java program to demonstrate
+// setSeed() method
+
+import java.security.*;
+import java.util.*;
+
+public class GFG1 {
+	public static void main(String[] argv)
+	{
+		try {
+			// creating the object of SecureRandom
+			SecureRandom sr = new SecureRandom(new byte[] { 1, 2, 3, 4 });
+
+			// Declaring the string variable
+			String str = "Tajmahal";
+
+			// Declaring the byte Array b
+			byte[] b = str.getBytes();
+
+			// Reseeding the random object
+			sr.setSeed(b);
+
+			// getting the seeds
+			byte[] seeds = sr.getSeed(10);
+
+			// printing the seed serialwise
+			for (int i = 0; i < seeds.length; i++)
+				System.out.println("Seed[" + i + "]:" + seeds[i]);
+		}
+
+		catch (ProviderException e) {
+
+			System.out.println("Exception thrown : " + e);
+		}
+	}
+}
