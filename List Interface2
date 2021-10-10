@@ -1,0 +1,25 @@
+// Java Program to Add Elements to a List
+
+// Importing all utility classes
+import java.util.*;
+
+// Main class
+class GFG {
+
+	// Main driver method
+	public static void main(String args[])
+	{
+		// Creating an object of List class
+		List<String> al = new ArrayList<>();
+
+		// Adding elements to object of List class
+		// Custom elements
+		al.add("Geeks");
+		al.add("Geeks");
+		al.add(1, "For");
+
+		// Print all the elements inside the List class
+		// object
+		System.out.println(al);
+	}
+}
