@@ -1,0 +1,5 @@
+<html>
+	<form action="LifeCycleServlet">
+		<input type="submit" value="invoke life cycle servlet">
+	</form>
+</html>
