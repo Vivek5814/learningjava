@@ -1,0 +1,21 @@
+// Java code to demonstrate how to prevent garbage collection
+// of an object using finalize method
+class A {
+	static A y;
+	void f()
+	{
+		A x = new A();
+	}
+	pubic void finalize()
+	{
+		y = this; // Putting the reference id
+		// of the current object
+		// into the static variable y
+
+		System.out.println("Object reference saved. The object
+			won't be collected by the garbage collector");
+	}
+	public static void main(String a[])
+	{
+		f(); // function called
+	}
