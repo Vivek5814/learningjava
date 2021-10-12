@@ -1,0 +1,20 @@
+// Java code to demonstrate when an object would
+// be deleted by the garbage collector
+
+class A {
+	void f()
+	{
+		A x = new A(); /*object created locally
+			It's scope remains valid till the
+			termination of this function*/
+	}
+	public static void main(String a[])
+	{
+		f();
+
+		/* function f() terminates,
+		and hence the object 'x'
+		too gets collected
+		by the garbage collector*/
+	}
+}
