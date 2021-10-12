@@ -1,0 +1,18 @@
+public class Singleton {
+
+	/* static class member which
+	will store the object reference*/
+	private static Singleton uniqueInstance;
+
+	private Singleton()
+	{
+	}
+
+	public static synchronized Singleton getInstance()
+	{
+		if (uniqueInstance == null) {
+			uniqueInstance = new Singleton();
+		}
+		return uniqInstance;
+	}
+}
