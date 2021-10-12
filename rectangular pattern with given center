@@ -1,0 +1,34 @@
+// C++ program for the above approach
+#include <bits/stdc++.h>
+using namespace std;
+// Function to print the matrix filled
+// with rectangle pattern having center
+// coordinates are c1, c2
+
+void printRectPattern(int c1, int c2, int n)
+{
+
+	// Iterate in the range[0, n-1]
+	for (int i = 0; i < n; i++) {
+		// Iterate in the range[0, n-1]
+		for (int j = 0; j < n; j++) {
+			cout << (max(abs(c1 - i), abs(c2 - j))) << " ";
+		}
+		cout << endl;
+	}
+}
+// Driver Code
+
+int main()
+{
+
+	// Given Input
+	int c1 = 2;
+	int c2 = 2;
+	int n = 5;
+
+	// Function Call
+	printRectPattern(c1, c2, n);
+	// This code is contributed by Potta Lokesh
+	return 0;
+}
