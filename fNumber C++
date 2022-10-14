@@ -1,0 +1,26 @@
+// C++ program to check if
+// M-th fibonacci divides N-th fibonacci
+#include <bits/stdc++.h>
+using namespace std;
+
+void check(int n, int m)
+{
+	// exceptional case for F(2)
+	if (n == 2 || m == 2 || n % m == 0) {
+		cout << "Yes" << endl;
+	}
+	// if none of the above cases,
+	// hence not divisible
+	else {
+		cout << "No" << endl;
+	}
+}
+
+// Driver Code
+int main()
+{
+	int m = 3, n = 9;
+	check(n, m);
+
+	return 0;
+}
