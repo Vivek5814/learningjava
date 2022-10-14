@@ -1,0 +1,55 @@
+// C# program to solve Gold Mine problem
+using System;
+
+public class GFG{
+
+static public int collectGold(int[,] gold, int x,
+								int y, int n, int m)
+{
+	
+	// Base condition.
+	if ((x < 0) || (x == n) || (y == m)) {
+	return 0;
+	}
+
+	// Right upper diagonal
+	int rightUpperDiagonal = collectGold(gold, x - 1, y + 1, n, m);
+
+	// right
+	int right = collectGold(gold, x, y + 1, n, m);
+
+	// Lower right diagonal
+	int rightLowerDiagonal = collectGold(gold, x + 1, y + 1, n, m);
+
+	// Return the maximum and store the value
+	return gold[x,y] + Math.Max(Math.Max(rightUpperDiagonal,
+										rightLowerDiagonal), right);
+}
+
+static public int getMaxGold(int[,] gold, int n, int m){
+	int maxGold = 0;
+
+	for (int i = 0; i < n; i++) {
+
+	// Recursive function call for ith row.
+	int goldCollected = collectGold(gold, i, 0, n, m);
+	maxGold = Math.Max(maxGold, goldCollected);
+	}
+
+	return maxGold;
+}
+
+// Driver Code
+static public void Main (){
+
+	int[,] gold = new int[,] { { 1, 3, 1, 5 },
+							{ 2, 2, 4, 1 },
+							{ 5, 0, 2, 3 },
+							{ 0, 6, 1, 2 } };
+
+	int m = 4, n = 4;
+	Console.Write(getMaxGold(gold, n, m));
+}
+}
+
+// This code is contributed by shruti456rawal
