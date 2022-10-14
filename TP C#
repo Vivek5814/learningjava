@@ -1,0 +1,26 @@
+// C# program to implement
+// the above approach
+using System;
+
+class GFG
+{
+	
+static int getNoOfWays(int n)
+{
+
+	// Base case
+	if (n <= 2) {
+	return n;
+	}
+	return getNoOfWays(n - 1) + getNoOfWays(n - 2);
+}
+
+// Driver Code
+public static void Main()
+{
+	Console.WriteLine(getNoOfWays(4));
+	Console.WriteLine(getNoOfWays(3));
+}
+}
+
+// This code is contributed by code_hunt.
