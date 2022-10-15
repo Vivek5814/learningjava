@@ -1,0 +1,78 @@
+<script>
+
+// JavaScript code to get maximum survival time
+
+// Class to represent an area
+class area{
+	constructor(a, b){
+		this.a = a
+		this.b = b
+	}
+}
+
+// Utility method to get maximum survival time
+function maxSurvival(A, B, X, Y, Z, last, memo){
+	// if any of A or B is less than 0, return 0
+	if (A <= 0 || B <= 0)
+		return 0
+	let cur = new area(A, B)
+
+	// if already calculated, return calculated value
+	for(let [key,value] of memo){
+		if (cur.a == key.a && cur.b == key.b)
+			return memo.get(key)
+	}
+
+	let temp;
+
+	// step to areas on basis of last chosen area
+	if (last == 1){
+		temp = 1 + Math.max(maxSurvival(A + Y.a, B + Y.b,
+								X, Y, Z, 2, memo),
+					maxSurvival(A + Z.a, B + Z.b,
+								X, Y, Z, 3, memo))
+	}
+	else if (last == 2){
+		temp = 1 + Math.max(maxSurvival(A + X.a, B + X.b,
+								X, Y, Z, 1, memo),
+			maxSurvival(A + Z.a, B + Z.b,
+				X, Y, Z, 3, memo))
+	}
+	else if (last == 3){
+		temp = 1 + Math.max(maxSurvival(A + X.a, B + X.b,
+				X, Y, Z, 1, memo),
+			maxSurvival(A + Y.a, B + Y.b,
+				X, Y, Z, 2, memo))
+	}
+
+	// store the result into map
+	memo.set(cur , temp)
+
+	return temp
+}
+
+// method returns maximum survival time
+function getMaxSurvivalTime(A, B, X, Y, Z){
+	if (A <= 0 || B <= 0)
+		return 0
+	let memo = new Map()
+
+	// At first, we can step into any of the area
+	return Math.max(maxSurvival(A + X.a, B + X.b, X, Y, Z, 1, memo),
+		maxSurvival(A + Y.a, B + Y.b, X, Y, Z, 2, memo),
+		maxSurvival(A + Z.a, B + Z.b, X, Y, Z, 3, memo))
+}
+
+// Driver code to test above method
+let X = new area(3, 2)
+let Y = new area(-5, -10)
+let Z = new area(-20, 5)
+
+let A = 20
+let B = 8
+document.write(getMaxSurvivalTime(A, B, X, Y, Z),"</br>")
+
+
+// This code is contributed by shinjanpatra
+
+</script>
