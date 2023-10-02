@@ -1,0 +1,7 @@
+See we won't get the tied row because we didn't use order by clause
+
+ID    NAME      SALARY
+--------------------------
+1    Geeks    10000
+4    Finch    10000
+2    RR       6000
