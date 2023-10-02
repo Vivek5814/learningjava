@@ -1,0 +1,3 @@
+SELECT SupplierID, Name, Address
+FROM Suppliers
+WHERE Name LIKE 'Ca%';
