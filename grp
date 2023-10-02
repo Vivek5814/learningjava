@@ -1,0 +1,1 @@
+SELECT Student, SUM(score) AS total FROM Marks GROUP BY Student
