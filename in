@@ -1,0 +1,1 @@
+SELECT Name FROM Emp1 WHERE Age IN (21,23);
