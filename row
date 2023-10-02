@@ -1,0 +1,2 @@
+SELECT * from myTable 
+fetch first 3 rows With Ties;
