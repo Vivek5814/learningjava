@@ -1,0 +1,1 @@
+SELECT EmpID, Name, Country FROM Emp1 WHERE Age > 21;
