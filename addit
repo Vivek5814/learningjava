@@ -1,0 +1,2 @@
+SELECT employee_id, employee_name, salary, salary * 100
+    AS "salary * 100" FROM addition;
