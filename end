@@ -1,0 +1,7 @@
+SELECT CustomerName, Country
+FROM Customer
+ORDER BY
+(CASE
+    WHEN Country  IS 'India' THEN Country
+    ELSE Age
+END);
