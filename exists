@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS Customer(
+CustID int NOT NULL,
+FName varchar(55),
+LName varchar(55),
+Email varchar(100),
+DOB date,
+CONSTRAINT customer_custid_pk  PRIMARY KEY(CustID)
+);
