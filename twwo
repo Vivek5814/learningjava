@@ -1,0 +1,13 @@
+Node *prev;
+// Curr points to the first node
+//of the XOR Linked list
+Node *curr = head;
+Node *next;
+While(curr!= NULL)
+{
+cout<<curr->data;
+//both represents the XOR value .
+next= prev ^ curr-> both;
+prev= curr;
+curr= next;
+}
