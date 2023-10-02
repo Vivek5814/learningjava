@@ -1,0 +1,6 @@
+DELETE 
+FROM Orders
+WHERE EXISTS (SELECT *
+              FROM customers
+              WHERE Customers.customer_id = Orders.c_id
+              AND Customers.lname = 'Mehra');
