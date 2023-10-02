@@ -1,0 +1,6 @@
+WITH temporaryTable(averageValue) as
+    (SELECT avg(Salary)
+    from Employee)
+        SELECT EmployeeID,Name, Salary 
+        FROM Employee, temporaryTable 
+        WHERE Employee.Salary > temporaryTable.averageValue;
