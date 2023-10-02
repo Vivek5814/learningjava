@@ -1,0 +1,2 @@
+UPDATE Customer SET CustomerName  
+= 'Nitin' WHERE Age = 22;
