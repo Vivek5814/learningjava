@@ -1,0 +1,3 @@
+SELECT * from myTable 
+order by salary desc 
+fetch first 3 rows With Ties;
