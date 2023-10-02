@@ -1,0 +1,1 @@
+SELECT * FROM Students WHERE LastName NOT LIKE '%[y-z]%';
