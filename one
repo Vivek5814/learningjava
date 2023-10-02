@@ -1,0 +1,5 @@
+SELECT fname, lname 
+FROM Customers 
+WHERE EXISTS (SELECT * 
+              FROM Orders 
+              WHERE Customers.customer_id = Orders.c_id);
