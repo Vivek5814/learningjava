@@ -1,0 +1,6 @@
+WITH temporaryTable (averageValue) as
+    (SELECT avg(Attr1)
+    FROM Table)
+    SELECT Attr1
+    FROM Table, temporaryTable
+    WHERE Table.Attr1 > temporaryTable.averageValue;
