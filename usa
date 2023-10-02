@@ -1,0 +1,2 @@
+UPDATE Customer SET CustomerName = 'Satyam', 
+Country = 'USA' WHERE CustomerID = 1;
