@@ -1,0 +1,4 @@
+SELECT Name
+FROM Emp
+where Age
+BETWEEN '22' AND '24';
