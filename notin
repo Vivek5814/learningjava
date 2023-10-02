@@ -1,0 +1,3 @@
+SELECT Name
+FROM Emp
+WHERE Salary NOT IN (25000, 30000);
