@@ -1,0 +1,7 @@
+CREATE TABLE Emp(
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Country VARCHAR(50),
+    Age int(2),
+  Salary int(10)
+);
