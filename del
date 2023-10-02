@@ -1,0 +1,1 @@
+DELETE FROM GFG_Employees WHERE NAME = 'Rithvik';  
