@@ -1,0 +1,5 @@
+UPDATE Customers
+SET lname = 'Kumari'
+WHERE EXISTS (SELECT *
+              FROM Customers
+              WHERE customer_id = 401);
