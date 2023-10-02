@@ -1,0 +1,3 @@
+SELECT *
+FROM Suppliers
+WHERE Address LIKE '%Okhla%';
