@@ -1,0 +1,3 @@
+SELECT Name
+FROM Emp
+WHERE Salary IN (30000, 40000, 25000);
