@@ -1,0 +1,6 @@
+struct Node {
+	int data;
+
+	// "both": XOR of the previous and next node addresses
+	Node* both;
+};
