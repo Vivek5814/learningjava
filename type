@@ -1,0 +1,2 @@
+SELECT employee_id, employee_name, salary, type, type + 100
+    AS "type+100" FROM addition;
