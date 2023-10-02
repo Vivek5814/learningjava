@@ -1,0 +1,2 @@
+SELECT employee_id, employee_name, salary, salary % 25000
+    AS "salary % 25000" FROM addition;
