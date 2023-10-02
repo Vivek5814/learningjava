@@ -1,0 +1,5 @@
+SELECT lname, fname
+FROM Customers
+WHERE NOT EXISTS (SELECT * 
+                  FROM Orders 
+                  WHERE Customers.customer_id = Orders.c_id);
