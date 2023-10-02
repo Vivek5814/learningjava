@@ -1,0 +1,8 @@
+CREATE TABLE Account(
+AccNo int NOT NULL,
+AType varchar(20),
+OBal int,
+OD date,
+CurBal int,
+CONSTRAINT customer_AccNo_fk  FOREIGN KEY(AccNo) REFERENCES Customer(CustID)
+);
