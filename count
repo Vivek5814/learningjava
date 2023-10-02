@@ -1,0 +1,1 @@
+SELECT COUNT (item), Customer_id FROM Orders GROUP BY order_id;  
