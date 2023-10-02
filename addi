@@ -1,0 +1,2 @@
+SELECT employee_id, employee_name, salary, salary + employee_id
+   AS "salary + employee_id" FROM addition;
